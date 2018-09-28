@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Arquitecturas de protocolos</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="get-shit-done-1.4.1/assets/css/demo.css">
+  <link rel="stylesheet" type="text/css" href="js.css/estilo.css">
+
+  <!--<link href="get-shit-done-1.4.1/bootstrap3/css/bootstrap.css" rel="stylesheet" />
+	<link href="get-shit-done-1.4.1/assets/css/gsdk.css" rel="stylesheet" />   
+    <link href="get-shit-done-1.4.1/assets/css/demo.css" rel="stylesheet" /> 
+
+    <link href="bootstrap3/css/font-awesome.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>-->
+
+  <script type="text/javascript" src="jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js.css/javascript.js"></script>
+</head>
+<body onload="CalcularAltura()" onResize="CalcularAltura()">
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">OSI y TCP/IP</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Arquitecturas</a></li>
+        <li><a href="oa2.html">Modelo OSI</a></li>
+        <li><a href="oa3.html">TCP/IP</a></li>
+      </ul>
+      <!--<ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>-->
+    </div>
+  </div>
+</nav>
+  
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2">
+      <ul class="nav nav-pills nav-stacked">
+      	<li class="active"><a id="1" data-toggle="pill" href="#contenido1">Introducción</a></li>
+        <li><a id="2" data-toggle="pill" href="#contenido2">Necesidad de arquitectura</a></li>
+        <li><a id="3" data-toggle="pill" href="#contenido3">Definición</a></li>
+        <li><a id="4" data-toggle="pill" href="#contenido4">Servicio y protocolo</a></li>
+        <li><a id="5" data-toggle="pill" href="#contenido5">Primitivas</a></li>
+        <li><a id="6" data-toggle="pill" href="#contenido6">Encapsulamiento</a></li>
+        <li><a id="7" data-toggle="pill" href="#contenido7">Glosario</a></li>
+        <li><a id="8" data-toggle="pill" href="#contenido8">Evaluación</a></li>
+      </ul>
+    </div>
+    <div class="col-sm-10 text-left">
+
+      <h3 class="text-center titulo" id="titulosPanel"><b>Introducción a arquitecturas de protocolos</b></h3>
+
+      	  <p align=right>
+          <button id="Atras" type="button" class="btn btn-primary" onclick="pantallaAnterior()">Atrás</button>
+          <button id="Siguiente" type="button" class="btn btn-primary" onclick="pantallaSiguiente()">Siguiente</button>
+          </p>
+
+
+    <div class="marco" id="zonaContenido">	
+     <div class="tab-content">
+      <div id="contenido1" class="tab-pane fade in active">
+
+          <p class="text-justify">En el material expuesto a continuación se describirán las arquitecturas de protocolos y sus conceptos más básicos y fundamentales.<br><br>
+
+          Los temas tratados serán:
+
+          <ul>
+		  <li>Concepto de arquitectura</li>
+		  <li>Modelo simple de arquitectura</li>
+		  <li>Conceptos básicos usados en las arquitecturas</li>
+		  <li>Proceso de encapsulamiento</li>
+		  </ul>
+
+          A la izquierda se encuentra un índice para navegar entre las secciones y a su vez botones para avanzar y retroceder entre ellas en la parte superior derecha.<br><br>
+
+          En algunas secciones se encuentran secuencias explicativas donde se debe avanzar (o retroceder) utilizando los botones correspondientes. Tambien es posible encontrarse con siglas o palabras con links que dirigen a un glosario con sus definiciones. Al abandonar una sección para dirigirse a otra, no se pierde el avance en las secuencias.<br><br>
+
+          En la barra de la parte superior de la pantalla es posible dirigirse a los otros materiales disponibles haciendo click en la opción deseada.
+          </p>
+
+
+      </div>	
+      <div id="contenido2" class="tab-pane fade">  
+	      <h3>Necesidad de Arquitectura</h3>
+	      <p class="text-justify">La comunicación entre computadores puede llegar a ser bastante compleja considerando todos los procedimientos que se deben realizar.
+	      <br><br>
+	      Al necesitar realizar una transferencia de un archivo entre dos computadores, además de contar con un camino para realizar la comunicación—ya sea una red o de forma directa—se debe cumplir con ciertas tareas que aseguren esta comunicación. Algunas de las tareas más básicas serían:</p>
+
+	      <ol>
+    		  <li>Que el sistema de origen proporcione la identificación del sistema destino a la red de comunicación</li>
+    		  <li>Que el sistema de origen compruebe que el sistema destino está preparado para recibir datos</li>
+    		  <li>Que la aplicación de transferencia de archivos en el sistema origen se asegure que la aplicación del destino esté lista para recibir y almacenar el archivo para el usuario</li>
+    		  <li>Que uno de los dos sistemas se encargue de traducir si es que los formatos de los archivos son incompatibles entre los sistemas</li>
+  		  </ol>
+  		  <hr>
+	      <!--
+	      <h3>Uhm</h3>
+	      <p>Ya...</p>-->
+	  </div>
+	  <div id="contenido3" class="tab-pane fade">
+	    <h3>Definición</h3>
+	   		<div class="row">
+      			<div class="col-sm-6">
+			      <p class="text-justify">Entre los computadores que se comunican debe haber un grado de cooperación alto que considere todas estas tareas. Debido a la complejidad de esto, es que la lógica para llevar a cabo la comunicación no se implemente en un módulo único que resuelva todas estas tareas, si no que se cuenta con <b>varios módulos donde cada uno realiza una tarea específica por separado</b>.
+			      Estos módulos se disponen en forma de <b>capas en una pila vertical</b>, lo que constituye una <b>arquitectura de <a class="clickable" onclick="llevar_a(7)">protocolos</a></b>. <br><br>Cada capa realiza tareas relacionadas entre sí, siendo las capas inferiores las que realizan tareas más básicas, olvidándose las capas superiores de las funciones realizadas por las capas que estén abajo de ellas. Estas capas se definen de tal forma que cambios realizados en una no afectan a las otras. Se necesita que exista el mismo conjunto de capas en los dos sistemas a comunicar, logrando la comunicación al hacer que cada capa de un sistema se comunique con la capa homóloga del otro intercambiando bloques de datos según <a class="clickable" onclick="llevar_a(7)">protocolos</a>.</p>
+
+			      <hr>
+
+			    </div>
+			    <div class="col-sm-6">
+
+			    	<h4 class="text-center">Modelo simple de 3 capas</h4>	
+            		<img class="img-responsive center-block" src="img/nombre_carpeta/0.png" id="nombre_carpeta">
+
+            		<div class="row"> 
+		             
+		              <!--<div class="col-sm-5 col-sm-offset-2">-->
+		                <div class="col-sm-6">
+		                  <img class= "pull-right" src="img/otras_img/ldisabled.png" id="nombre_carpeta_btn_ant" onclick="imagen_familia('nombre_carpeta', 'texto1', 0)">
+		                </div>
+		              <!--</div>-->
+		            
+		              <!--<div class="col-sm-4">-->
+		              	<div class="col-sm-6">
+		                  <img class= "clickable pull-left" src="img/otras_img/right.png" id="nombre_carpeta_btn_sig" onclick="imagen_familia('nombre_carpeta', 'texto1', 1)">
+		                </div>
+		              <!--</div>-->
+
+		            </div>
+		            <br>
+		            <div class="well well-sm">
+		            <p class="text-center" id="texto1">Se implementan las <a class="clickable" onclick="llevar_a(2)">tareas 3 y 4</a> por el módulo de transferencia de archivos, donde los módulos de ambos sistemas intercambian archivos y órdenes</p>
+		        	</div>
+
+		            
+		        </div>
+		    </div> 
+
+		    <br>       
+
+
+	</div>
+	
+	  <div id="contenido4" class="tab-pane fade">
+	    <h3>Servicio y protocolo</h3>
+
+	 	<div class="row">
+      	   <div class="col-sm-6">
+
+			    <p class="text-justify">Una función global de comunicación se divide en cierto número de capas o módulos, donde cada capa está diseñada para que las interfaces entre ellas sean tan simples como sea posible y que dentro de cada una se suministre el servicio a la capa superior, y a la vez el <a class="clickable" onclick="llevar_a(7)">protocolo</a> con la capa par en el sistema remoto. La normalización requerida en cada capa para proveer esto es:
+			    </p>
+			    <hr>
+		   </div>
+
+		   <div class="col-sm-6">
+
+				<img class="img-responsive center-block" src="img/nombre_carpeta2/servicio1.PNG" id="nombre_carpeta2">
+				<br>
+
+			    <div class="row"> 
+	             
+	              <div class="col-sm-6">
+	                <img class= "pull-right" src="img/otras_img/ldisabled.png" id="nombre_carpeta2_btn_ant" onclick="imagen_familia('nombre_carpeta2', 'texto2', 0)">
+	              </div>
+	            
+	              <!--<div class="col-sm-3">
+	                <button class="btn btn-default" onclick="play_familia('nombre_carpeta2')">play</button>
+	              </div>-->
+
+	              <div class="col-sm-6">
+	                <img class= "clickable pull-left" src="img/otras_img/right.png" id="nombre_carpeta2_btn_sig" onclick="imagen_familia('nombre_carpeta2', 'texto2', 1)">
+	              </div>
+
+	            </div>
+          
+
+                <br>
+                <div class="well well-sm">
+                <p class="text-center" id="texto2"></p>
+                </div>
+            </div>    
+        </div> 
+
+  </div>
+
+   <div id="contenido5" class="tab-pane fade">
+		<div class="row">	
+	<div class="col-sm-8">	
+	  	<h3>Primitivas de servicio</h3>
+	  	<p class="text-justify">Los servicios entre capas adyacentes se describen en términos de primitivas y mediante los parámetros involucrados (datos e información de control). Una primitiva es una especificación de una función que se lleva a cabo. En las arquitecturas existen cuatro tipos de primitivas de servicio:<br><br> 
+		<b>Solicitud</b>: Emitida por el usuario del servicio para invocar un servicio y pasar los parámetros requeridos<br><br>
+		<b>Indicación</b>: Emitida por el proveedor del servicio para indicar que ha sido invocado un procedimiento por el usuario del servicio en la entidad par de la conexión y para entregar los parámetros asociados<br><br>
+		<b>Respuesta</b>: Emitida por el usuario del servicio para confirmar algún procedimiento invocado mediante una indicación a ese usuario<br><br>
+		<b>Confirmación</b>: Emitida por el proveedor del servicio para confirmar un procedimiento invocado previamente por una solicitud del usuario del servicio<br>
+	    </p>
+	    <hr>
+	</div>
+	<div class="col-sm-4">
+		<br>
+			<h4 class="text-center">Diagrama temporal de las primitivas</h4><br>
+            <img class="img-responsive center-block" src="img/nombre_carpeta7/primitiva1.PNG" id="nombre_carpeta7">
+
+            <div class="row"> 
+             
+              <div class="col-sm-6">
+                <img class= "pull-right" src="img/otras_img/ldisabled.png" id="nombre_carpeta7_btn_ant" onclick="imagen_familia('nombre_carpeta7', 'texto7', 0)">
+              </div>
+            
+              <!--<div class="col-sm-3">
+                <button class="btn btn-default" onclick="play_familia('nombre_carpeta7')">play</button>
+              </div>-->
+
+              <div class="col-sm-6">
+                <img class= "clickable pull-left" src="img/otras_img/right.png" id="nombre_carpeta7_btn_sig" onclick="imagen_familia('nombre_carpeta7', 'texto7', 1)">
+              </div>
+
+            </div>
+
+
+              <br>
+              <div class="well well-sm">
+                <p class="text-center" id="texto7">En una transferencia de datos desde una entidad (N) a su entidad par (N) en otro sistema se verifican los siguientes hechos: La entidad origen (N) invoca a su entidad (N-1) con una primitiva de <b>solicitud</b>. Se asocian los parámetros correspondientes, como los datos y la dirección destino.</p>
+     		  </div>
+     </div>
+
+        </div>
+	  </div>
+
+	  <div id="contenido6" class="tab-pane fade">
+	  	<h3>Encapsulamiento</h3>
+
+	  	<div class="row">
+              <div class="col-sm-12">
+			    <p class="text-justify">A continuación se muestra la interacción entre los módulos para la transferencia de un bloque de datos. Este proceso describe el funcionamiento general de una arquitectura de protocolos.
+			    </p>
+			  </div>
+		</div>
+
+		<div class="row">
+			 <div class="col-sm-12">
+				<img class="img-responsive center-block" src="img/nombre_carpeta3/arqui1.PNG" id="nombre_carpeta3">
+				<br>
+			 </div>		
+		</div>
+
+		<div class="row"> 
+             
+              <div class="col-sm-6">
+                <img class= "pull-right" src="img/otras_img/ldisabled.png" id="nombre_carpeta3_btn_ant" onclick="imagen_familia('nombre_carpeta3', 'texto3', 0)">
+              </div>
+            
+              <!--<div class="col-sm-3">
+                <button class="btn btn-default" onclick="play_familia('nombre_carpeta3')">play</button>
+              </div>-->
+
+              <div class="col-sm-6">
+                <img class= "clickable pull-left" src="img/otras_img/right.png" id="nombre_carpeta3_btn_sig" onclick="imagen_familia('nombre_carpeta3', 'texto3', 1)">
+              </div>
+
+        </div>
+
+        <div class="row">
+              <div class="col-sm-12">
+                <br>
+                <div class="well well-sm">
+                <p class="text-center" id="texto3">Desde el computador A se pretende transferir un archivo registro a registro al computador B.</p>
+                </div>
+              </div>
+        </div>
+
+
+
+
+	  </div>
+	    <div id="contenido7" class="tab-pane fade">
+	    <h3>Glosario</h3>
+	    <br>
+	    <b>Protocolo</b>: Una serie de reglas o convenciones que se verifican en los bloques de datos por las capas correspondientes. Estas reglas verifican aspectos como la sintaxis, semántica y temporización.
+	    <br><br>	
+		<b>PDU</b>: Unidad de datos de protocolo. Es la unidad de datos especificada en cada protocolo de una capa. Contiene información de control del protocolo junto a datos del usuario.
+        <br><br>
+	    <b>SAP</b>: Punto de acceso al servicio. Es una locación o puerto en la que una capa puede solicitar servicios de otra capa.
+		<hr>
+
+	  </div>
+	  <div id="contenido8" class="tab-pane fade">
+
+		  <h2>Evaluación</h2>
+
+
+
+		  <div>
+
+				<p id="texto_pregunta_1"></p></br>
+					<form id = "pregunta_1">
+						<input id="pregunta_1_alternativa_1" type="radio" name="gender" value="3"> <label id="texto_pregunta_1_alternativa_1"></label> </br>
+						<input id="pregunta_1_alternativa_2" type="radio" name="gender" value="1"> <label id="texto_pregunta_1_alternativa_2"></label> </br>
+						<input id="pregunta_1_alternativa_3" type="radio" name="gender" value="2"> <label id="texto_pregunta_1_alternativa_3"></label> </br>
+						<input id="pregunta_1_alternativa_4" type="radio" name="gender" value="1"> <label id="texto_pregunta_1_alternativa_4"></label> </br>
+						<input id="pregunta_1_alternativa_5" type="radio" name="gender" value="2"> <label id="texto_pregunta_1_alternativa_5"></label> </br>
+					</form>
+					<p id="resultado_1"></p>
+					<p id = "respuesta_1" class="oculto"></p></br>
+
+		  </div>
+
+		<div>
+
+			<p id="texto_pregunta_2"></p></br>
+			<form id = "pregunta_2">
+				<input id="pregunta_2_alternativa_1" type="radio" name="gender" value="3"> <label id="texto_pregunta_2_alternativa_1"></label> </br>
+				<input id="pregunta_2_alternativa_2" type="radio" name="gender" value="1"> <label id="texto_pregunta_2_alternativa_2"></label> </br>
+				<input id="pregunta_2_alternativa_3" type="radio" name="gender" value="2"> <label id="texto_pregunta_2_alternativa_3"></label> </br>
+				<input id="pregunta_2_alternativa_4" type="radio" name="gender" value="1"> <label id="texto_pregunta_2_alternativa_4"></label> </br>
+				<input id="pregunta_2_alternativa_5" type="radio" name="gender" value="2"> <label id="texto_pregunta_2_alternativa_5"></label> </br>
+			</form>
+			<p id="resultado_2"></p>
+			<p id = "respuesta_2" class="oculto"></p></br>
+
+		</div>
+		
+		<div>
+
+			<p id="texto_pregunta_3"></p></br>
+			<form id = "pregunta_3">
+				<input id="pregunta_3_alternativa_1" type="radio" name="gender" value="3"> <label id="texto_pregunta_3_alternativa_1"></label> </br>
+				<input id="pregunta_3_alternativa_2" type="radio" name="gender" value="1"> <label id="texto_pregunta_3_alternativa_2"></label> </br>
+			</form>
+			<p id="resultado_3"></p>
+			<p id = "respuesta_3" class="oculto"></p></br>
+
+		</div>
+
+		<div>
+
+			<p id="texto_pregunta_4"></p></br>
+			<form id = "pregunta_4">
+				<input id="pregunta_4_alternativa_1" type="radio" name="gender" value="3"> <label id="texto_pregunta_4_alternativa_1"></label> </br>
+				<input id="pregunta_4_alternativa_2" type="radio" name="gender" value="1"> <label id="texto_pregunta_4_alternativa_2"></label> </br>
+				<input id="pregunta_4_alternativa_3" type="radio" name="gender" value="2"> <label id="texto_pregunta_4_alternativa_3"></label> </br>
+				<input id="pregunta_4_alternativa_4" type="radio" name="gender" value="1"> <label id="texto_pregunta_4_alternativa_4"></label> </br>
+				<input id="pregunta_4_alternativa_5" type="radio" name="gender" value="2"> <label id="texto_pregunta_4_alternativa_5"></label> </br>
+			</form>
+			<p id="resultado_4"></p>
+			<p id = "respuesta_4" class="oculto"></p></br>
+
+		</div>
+
+		<div>
+
+			<p id="texto_pregunta_5"></p></br>
+			<form id = "pregunta_5">
+				<input id="pregunta_5_alternativa_1" type="radio" name="gender" value="3"> <label id="texto_pregunta_5_alternativa_1"></label> </br>
+				<input id="pregunta_5_alternativa_2" type="radio" name="gender" value="1"> <label id="texto_pregunta_5_alternativa_2"></label> </br>
+				<input id="pregunta_5_alternativa_3" type="radio" name="gender" value="2"> <label id="texto_pregunta_5_alternativa_3"></label> </br>
+				<input id="pregunta_5_alternativa_4" type="radio" name="gender" value="1"> <label id="texto_pregunta_5_alternativa_4"></label> </br>
+				<input id="pregunta_5_alternativa_5" type="radio" name="gender" value="2"> <label id="texto_pregunta_5_alternativa_5"></label> </br>
+			</form>
+			<p id="resultado_5"></p>
+			<p id = "respuesta_5" class="oculto"></p></br>
+
+		</div>
+
+		<div>
+
+			<p id="texto_pregunta_6"></p></br>
+			<form id = "pregunta_6">
+				<input id="pregunta_6_alternativa_1" type="radio" name="gender" value="3"> <label id="texto_pregunta_6_alternativa_1"></label> </br>
+				<input id="pregunta_6_alternativa_2" type="radio" name="gender" value="1"> <label id="texto_pregunta_6_alternativa_2"></label> </br>
+			</form>
+			<p id="resultado_6"></p>
+			<p id = "respuesta_6" class="oculto"></p></br>
+
+		</div>
+
+		<div>
+
+			<p id="texto_pregunta_7"></p></br>
+			<form id = "pregunta_7">
+				<input id="pregunta_7_alternativa_1" type="radio" name="gender" value="3"> <label id="texto_pregunta_7_alternativa_1"></label> </br>
+				<input id="pregunta_7_alternativa_2" type="radio" name="gender" value="1"> <label id="texto_pregunta_7_alternativa_2"></label> </br>
+				<input id="pregunta_7_alternativa_3" type="radio" name="gender" value="2"> <label id="texto_pregunta_7_alternativa_3"></label> </br>
+				<input id="pregunta_7_alternativa_4" type="radio" name="gender" value="1"> <label id="texto_pregunta_7_alternativa_4"></label> </br>
+				<input id="pregunta_7_alternativa_5" type="radio" name="gender" value="2"> <label id="texto_pregunta_7_alternativa_5"></label> </br>
+			</form>
+			<p id="resultado_7"></p>
+			<p id = "respuesta_7" class="oculto"></p></br>
+
+		</div>			  
+
+		  <a id = "CorregirTodo" class = "btn btn-default" onclick = "correccionValida(7)"> 
+				Corregir 
+		  </a>
+
+
+		  <script>
+
+
+
+									//pregunta 1
+									var textoPregunta1 = "1) Dos entidades de una misma capa en sistemas diferentes cooperan a través de un/una:";
+									var alternativasPregunta1 = ["a) Servicio.","b) Protocolo.","c) Primitiva.","d) Módulo.","e) Aplicación."];
+									var respuesta1 = "b) Protocolo.";
+									generarPregunta(1,textoPregunta1,alternativasPregunta1,respuesta1);
+
+									//pregunta 2
+									var textoPregunta2 = "2) La razón por la que en una arquitectura de protocolos se cuenta con varios módulos (capas) donde cada uno opera por separado es:";
+									var alternativasPregunta2 = ["a) Debido a la complejidad en el grado de cooperación requerido entre sistemas.","b) Para normalizar los servicios que cada capa ofrece a su capa superior.","c) Para que los cambios realizados en una capa no afecten a las otras.","d) Todas las anteriores.","e) a y c."];
+									var respuesta2 = "e) a y c.";
+									generarPregunta(2,textoPregunta2,alternativasPregunta2,respuesta2);
+
+									//pregunta 3
+									var textoPregunta3 = "3) Las primitivas de servicio que se añaden en caso de un servicio confirmado son Respuesta y Confirmación:";
+									var alternativasPregunta3 = ["a) Verdadero.","b) Falso."];
+									var respuesta3 = "a) Verdadero.";
+									generarPregunta(3,textoPregunta3,alternativasPregunta3,respuesta3);
+
+									//pregunta 4
+									var textoPregunta4 = "4) La capa que puede fraccionar un bloque de datos en unidades más pequeñas es:";
+									var alternativasPregunta4 = ["a) La capa de acceso a la red.","b) La capa de aplicación.","c) La capa de transporte.","d) Todas las anteriores.","e) a y c."];
+									var respuesta4 = "c) La capa de transporte.";
+									generarPregunta(4,textoPregunta4,alternativasPregunta4,respuesta4);
+
+									//pregunta 5
+									var textoPregunta5 = "5) La PDU de transporte corresponde a:";
+									var alternativasPregunta5 = ["a) El registro junto a una cabecera con el SAP destino, n° de secuencia y código de detección de error.","b) El campo de datos de la PDU de acceso a la red.","c) La PDU creada por la capa de aplicación.","d) a y b.","e) La cabecera de la PDU de acceso a la red."];
+									var respuesta5 = "d) a y b.";
+									generarPregunta(5,textoPregunta5,alternativasPregunta5,respuesta5);
+
+									//pregunta 6
+									var textoPregunta6 = "6) El protocolo de transporte examina el campo de direccion destino de la cabecera para entregar el registro a una aplicación:";
+									var alternativasPregunta6 = ["a) Verdadero.","b) Falso."];
+									var respuesta6 = "b) Falso.";
+									generarPregunta(6,textoPregunta6,alternativasPregunta6,respuesta6);
+
+									//pregunta 7
+									var textoPregunta7 = "7) Corresponden a normalizaciones requeridas en cada capa:";
+									var alternativasPregunta7 = ["a) Servicio.","b) Direccionamiento.","c) Protocolo.","d) a y b","e) a, b y c."];
+									var respuesta7 = "e) a, b y c.";
+									generarPregunta(7,textoPregunta7,alternativasPregunta7,respuesta7);
+
+
+		  </script>
+
+	  </div>
+
+
+
+	 </div> 
+	</div>     
+    </div>
+    <!--<div class="col-sm-2 sidenav">
+      <div class="well">
+        <p>ADS</p>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div>
+    </div>-->
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <p>Arquitecturas de protocolos</p>
+</footer>
+
+</body>
+</html>

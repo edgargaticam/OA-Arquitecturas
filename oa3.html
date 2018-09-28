@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Arquitecturas de protocolos</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="js.css/estilo.css">
+  <script type="text/javascript" src="jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js.css/javascript.js"></script>
+</head>
+<body onload="CalcularAltura()" onResize="CalcularAltura()">
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">OSI y TCP/IP</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="oa1.html">Arquitecturas</a></li>
+        <li><a href="oa2.html">Modelo OSI</a></li>
+        <li class="active"><a href="#">TCP/IP</a></li>
+      </ul>
+      <!--<ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>-->
+    </div>
+  </div>
+</nav>
+  
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2">
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a id="1" data-toggle="pill" href="#contenido1">Introducción</a></li>
+        <li><a id="2" data-toggle="pill" href="#contenido2">TCP/IP</a></li>
+        <li><a id="3" data-toggle="pill" href="#contenido3">Capa física</a></li>
+        <li><a id="4" data-toggle="pill" href="#contenido4">Capa de acceso a la red</a></li>
+        <li><a id="5" data-toggle="pill" href="#contenido5">Capa internet</a></li>
+        <li><a id="6" data-toggle="pill" href="#contenido6">Capa de transporte</a></li>
+        <li><a id="7" data-toggle="pill" href="#contenido7">Capa de aplicación</a></li>
+        <li><a id="8" data-toggle="pill" href="#contenido8">Funcionamiento de TCP e IP</a></li>
+        <li><a id="9" data-toggle="pill" href="#contenido9">Glosario</a></li>
+        <li><a id="10" data-toggle="pill" href="#contenido10">Evaluación</a></li>
+      </ul>
+    </div>
+    <div class="col-sm-10 text-left">
+      <h3 class="text-center titulo" id="titulosPanel"><b>Conjunto de protocolos TCP/IP</b></h3>
+
+          <p align=right>
+          <button id="Atras" type="button" class="btn btn-primary" onclick="pantallaAnterior()">Atrás</button>
+          <button id="Siguiente" type="button" class="btn btn-primary" onclick="pantallaSiguiente()">Siguiente</button>
+          </p>
+    <div class="marco" id="zonaContenido">
+     <div class="tab-content">
+      <div id="contenido1" class="tab-pane fade in active">
+
+      <p class="text-justify">En el material expuesto a continuación se explicará el conjunto de protocolos TCP/IP.<br><br>
+
+          Los temas tratados serán:
+
+          <ul>
+          <li>Introducción a TCP/IP</li>
+          <li>Descripción de las capas de TCP/IP</li>
+          <li>Descripción de los protocolos usados</li>
+          <li>Funcionamiento del entorno TCP/IP</li>
+          </ul>
+
+          A la izquierda se encuentra un índice para navegar entre las secciones y a su vez botones para avanzar y retroceder entre ellas en la parte superior derecha.<br><br>
+
+          En algunas secciones se encuentran secuencias explicativas donde se debe avanzar (o retroceder) utilizando los botones correspondientes. Tambien es posible encontrarse con siglas o palabras con links que dirigen a un glosario con sus definiciones. Al abandonar una sección para dirigirse a otra, no se pierde el avance en las secuencias.<br><br>
+
+          En la barra de la parte superior de la pantalla es posible dirigirse a los otros materiales disponibles haciendo click en la opción deseada.
+          </p> 
+      </div>
+      <div id="contenido2" class="tab-pane fade">  
+	      <h1>TCP/IP</h1>
+	      <div class="row">
+              <div class="col-sm-8">
+	      <p class="text-justify">Entre las arquitecturas que han sido determinantes y fundamentales en el desarrollo de estándares de comunicación, junto al modelo de referencia OSI, está el conjunto de protocolos TCP/IP, siendo esta la arquitectura más utilizada.
+	      <br><br>
+		  TCP/IP es el resultado de la investigación y desarrollo de la red de conmutación de paquetes <a class="clickable" onclick="llevar_a(9)">ARPANET</a>, financiada por <a class="clickable" onclick="llevar_a(9)">DARPA</a> y se denomina como la familia de protocolos TCP/IP. Esta familia es una colección extensa de protocolos que corresponden a los estándares de lo que hoy conocemos como Internet.<br><br>
+		  El modelo TCP/IP estructura el problema de la comunicación en cinco capas relativamente independientes entre sí: capa física, capa de acceso a la red, capa internet, capa extremo-a-extremo o de transporte y capa de aplicación.
+          </p>
+	      <hr>
+	          </div>
+	          <div class="col-sm-4">
+	      <img class="img-responsive center-block" src="img/otras_img/comparacion.png" id="img2">
+	      <div class="well well-sm">
+                <p class="text-center">Comparación y equivalencia entre OSI y TCP/IP</p>
+              </div>
+	      	  </div>
+	      </div> 	      		
+	      
+	  </div>
+	  <div id="contenido3" class="tab-pane fade">
+	    <h3>Capa física</h3>
+	    <img class="img-responsive center-block" src="img/otras_img/capa fisica.jpg" id="fiber" width="60%">
+	    <p>Esta capa define la interfaz física entre el dispositivo de transmisión de datos y el medio de transmisión o red. Se preocupa de la especificación de las características del medio de transmisión, de la naturaleza de las señales, tasas de datos y otros temas relacionados.
+        </p>
+        <hr>
+	  </div>
+	  <div id="contenido4" class="tab-pane fade">
+	    <h3>Capa de acceso a la red</h3>
+      <p class="text-justify">Este nivel es el responsable del intercambio de datos entre el sistema final y la red a la que se conecta. El emisor, al suministrar la dirección del destino a la red, hace que esta encamine los datos hacia el destino apropiado. El nivel de red también se preocupa de proveer servicios requeridos por el emisor, como el manejo de prioridades.
+        <br><br>
+      El software a usar en este nivel será determinado según el tipo de red que se tenga.  Se han desarrollado varios estándares para la conmutación de circuitos, la conmutación de paquetes (ej. <i>frame relay</i>) y para las redes de área local (ej. <i><a class="clickable" onclick="llevar_a(9)">Ethernet</a></i>). Algunos de los protocolos más usados son <b><a class="clickable" onclick="llevar_a(9)">ARP</a></b> y <b><a class="clickable" onclick="llevar_a(9)">NDP</a></b>.
+      </p>
+      <hr>
+
+
+	    <!--<div class="row">
+              <div class="col-sm-12">
+                <img class="img-responsive center-block" src="img/nombre_carpeta4/entorno1.PNG" id="nombre_carpeta4">
+              </div>
+            </div>
+
+            <div class="row"> 
+             
+              <div class="col-sm-4 col-sm-offset-2">
+                <button class="btn btn-default" id="nombre_carpeta_btn_ant" onclick="imagen_familia('nombre_carpeta4', 'texto4', 0)">Anterior</button>
+              </div>
+            
+              <div class="col-sm-3">
+                <button class="btn btn-default" onclick="play_familia('nombre_carpeta4')">play</button>
+              </div>
+
+              <div class="col-sm-3">
+                <button class="btn btn-default" id="nombre_carpeta_btn_sig" onclick="imagen_familia('nombre_carpeta4', 'texto4', 1)">Siguiente</button>
+              </div>
+
+            </div>
+
+            <div class="row">
+              <div class="col-sm-12">
+              <br>
+                <p class="text-center" id="texto4">En un entorno OSI cada sistema debe contener las 7 capas. Si la aplicación A quiere transmitir un mensaje a la aplicación B, invoca a la capa de aplicación (capa 7).</p>
+              </div>
+            </div>-->
+
+	  </div>
+	  <div id="contenido5" class="tab-pane fade">
+	    <h3>Capa internet</h3>
+	    <p class="text-justify">
+
+        En el caso de que los sistemas finales que intercambian datos se encuentren en distintas redes, la capa internet será la encargada del enrutamiento de los datos. Se necesitarán una serie de procedimientos que permitan que los datos atraviesen las distintas redes interconectadas.<br><br>
+        El protocolo Internet (IP, <i>Internet Protocol</i>) es el encargado de ofrecer el servicio de enrutamiento. IP es implementado tanto en los sistemas finales, como en los enrutadores (routers) intermedios. Un router es un procesador que conecta dos redes y se encarga de retransmitir datos de una red a otra determinando la ruta que se debe seguir para alcanzar el destino.<br><br>
+        Los protocolos IP más utilizados son <b>IPv4</b> e <b>IPv6</b>.<br><br>
+
+        <div class="row">
+        	<div class="col-sm-6">
+       			 <h4 class="text-center">Cabecera IPv4</h4>
+       			 <img class="img-responsive center-block" src="img/otras_img/ipv4.png" id="ipv4"><br>
+       			 <div class="well well-sm">
+       			 <p class="text-justify">Esta cabecera tiene 20 octetos, o 160 bits. Incluye direcciones fuente y destino de 32 bits. El campo de suma de comprobación se usa para detectar errores en la cabecera y así evitar un reparto errado. El campo Protocolo indica qué protocolo de nivel superior está usando IP. Los campos Identificación, Flags y Desplazamiento del fragmento se usan en el proceso de fragmentación y reensamblado. El campo Tiempo de vida indica cuánto tiempo se le permite a un datagrama permanecer en la red. IHL y Longitud total indican las longitudes de la cabecera como de todo el datagrama respectivamente. Versión la versión de IP, en este caso 4.</p>
+       			 </div>
+       		</div>
+
+       		<div class="col-sm-6">
+       			 <h4 class="text-center">Cabecera IPv6</h4>
+       			 <img class="img-responsive center-block" src="img/otras_img/ipv6.png" id="ipv6"><br>
+       			 <div class="well well-sm">
+       			 <p class="text-justify">Esta cabecera consta de 40 octetos. El principal y más importante cambio en IPv6 es la extensión del campo de direcciones de origen y destino de 32 bits a 128 bits. El campo Etiqueta de flujo se utiliza para etiquetar paquetes que requieren tratamiento especial. Cabecera siguiente identifica el tipo de cabecera que sigue inmediatamente a la cabecera IPv6. Límite de saltos indice el número restante de saltos permitidos para el paquete.</p>
+       			 </div>
+       		</div>
+       	</div>
+
+
+
+        </p>
+        <hr>
+	  </div>
+	  <div id="contenido6" class="tab-pane fade">
+	    <h3>Capa extremo-a-extremo o de transporte</h3>
+	    <p class="text-justify">
+        La capa de transporte es un nivel común compartido por todas las aplicaciones donde su función es la de asegurar fiabilidad en el intercambio de datos, es decir, asegurar la llegada de los datos y la conservación del orden en el que fueron enviados. Los mecanismos para proporcionar esta fiabilidad son independientes de la naturaleza de las aplicaciones.<br><br>
+        El protocolo para este control de la transmisión es <b><a class="clickable" onclick="llevar_a(9)">TCP</a></b>, el cual es orientado a conexión (se establece una conexión lógica previa a la transferencia), pero también existe el protocolo <b><a class="clickable" onclick="llevar_a(9)">UDP</a></b> que es no orientado a conexión (transferencia sin previo acuerdo) y por lo tanto no garantiza la entrega, la conservación del orden secuencial, ni la protección frente a duplicados.
+
+        <div class="row">
+        	<div class="col-sm-6">
+       			 <h4 class="text-center">Cabecera TCP</h4>
+       			 <img class="img-responsive center-block" src="img/otras_img/tcp.png" id="tcp"><br>
+       			 <div class="well well-sm">
+       			 <p class="text-justify">Posee una longitud mínima de 20 octetos. Sus campos de puertos de origen y destino son de 16 bits. Los campos de número de secuencia y confirmación se utilizan para asegurar la conservación del orden en los octetos de datos, así como también el campo de Ventana y de Puntero Urgente.</p>
+       			 </div>
+       		</div>
+
+       		<div class="col-sm-6">
+       			 <h4 class="text-center">Cabecera UDP</h4>
+       			 <img class="img-responsive center-block" src="img/otras_img/udp.png" id="udp"><br>
+       			 <div class="well well-sm">
+       			 <p class="text-justify">Consta de 8 octetos. Cuenta con los campos básicos de puertos origen y destino, longitud del segmento UDP y una suma de comprobación opcional.</p>
+       			 </div>
+       		</div>
+       	</div>
+
+
+        </p>
+        <hr>
+	  </div>
+    <div id="contenido7" class="tab-pane fade">
+      <h3>Capa de aplicación</h3>
+      <div class="row">
+      	<div class="col-sm-6">
+	      <p class="text-justify">
+	        Esta capa contiene toda la lógica para posibilitar las aplicaciones de usuario.<br><br>
+	        La capa de aplicación necesita un módulo separado bien definido para cada tipo particular de aplicación. Algunos ejemplos de protocolos de esta capa son <b><a class="clickable" onclick="llevar_a(9)">SMTP</a></b>, <b><a class="clickable" onclick="llevar_a(9)">FTP</a></b> y <b><a class="clickable" onclick="llevar_a(9)">TELNET</a></b>.
+	      </p>
+	      <hr>
+  		</div>
+  		<div class="col-sm-6">
+
+			    	<h4 class="text-center">Interfaces de protocolo</h4>	
+            		<img class="img-responsive center-block" src="img/nombre_carpeta8/aplica1.png" id="nombre_carpeta8">
+
+            		<div class="row"> 
+		             
+		              <!--<div class="col-sm-5 col-sm-offset-2">-->
+		                <div class="col-sm-6">
+		                  <img class= "pull-right" src="img/otras_img/ldisabled.png" id="nombre_carpeta8_btn_ant" onclick="imagen_familia('nombre_carpeta8', 'texto8', 0)">
+		                </div>
+		              <!--</div>-->
+		            
+		              <!--<div class="col-sm-4">-->
+		              	<div class="col-sm-6">
+		                  <img class= "clickable pull-left" src="img/otras_img/right.png" id="nombre_carpeta8_btn_sig" onclick="imagen_familia('nombre_carpeta8', 'texto8', 1)">
+		                </div>
+		              <!--</div>-->
+
+		            </div>
+		            <br>
+		            <div class="well well-sm">
+		            <p class="text-center" id="texto8">La mayoría de las aplicaciones requieren un protocolo de transporte fiable y orientado a la conexión, por lo que utilizan TCP.</p>
+		        	</div>
+
+		            
+		</div>
+	  </div>	
+
+      <!--<div class="row">
+              <div class="col-sm-12">
+                <img class="img-responsive center-block" src="img/nombre_carpeta5/red1.PNG" id="nombre_carpeta5">
+              </div>
+            </div>
+
+            <div class="row"> 
+             
+              <div class="col-sm-4 col-sm-offset-2">
+                <button class="btn btn-default" id="nombre_carpeta_btn_ant" onclick="imagen_familia('nombre_carpeta5', 'texto5', 0)">Anterior</button>
+              </div>
+            
+              <div class="col-sm-3">
+                <button class="btn btn-default" onclick="play_familia('nombre_carpeta5')">play</button>
+              </div>
+
+              <div class="col-sm-3">
+                <button class="btn btn-default" id="nombre_carpeta_btn_sig" onclick="imagen_familia('nombre_carpeta5', 'texto5', 1)">Siguiente</button>
+              </div>
+
+            </div>
+
+            <div class="row">
+              <div class="col-sm-12">
+              <br>
+                <p class="text-center" id="texto5">Las tres capas inferiores están relacionadas con la conexión y la comunicación con la red.</p>
+              </div>
+            </div>-->  
+
+
+    </div>
+    <div id="contenido8" class="tab-pane fade">
+      <h3>Funcionamiento de TCP e IP</h3>
+            <div class="row">
+              <div class="col-sm-12">
+                <img class="img-responsive center-block" src="img/nombre_carpeta6/tcpip1.PNG" id="nombre_carpeta6">
+              </div>
+            </div>
+
+            <div class="row"> 
+             
+              <div class="col-sm-6">
+                <img class= "pull-right" src="img/otras_img/ldisabled.png" id="nombre_carpeta6_btn_ant" onclick="imagen_familia('nombre_carpeta6', 'texto6', 0)">
+              </div>
+            
+              <!--<div class="col-sm-3">
+                <button class="btn btn-default" onclick="play_familia('nombre_carpeta5')">play</button>
+              </div>-->
+
+              <div class="col-sm-6">
+                <img class= "clickable pull-left" src="img/otras_img/right.png" id="nombre_carpeta6_btn_sig" onclick="imagen_familia('nombre_carpeta6', 'texto6', 1)">
+              </div>
+
+            </div>
+
+            <div class="row">
+              <div class="col-sm-12">
+              <br>
+              <div class="well well-sm">
+                <p class="text-center" id="texto6">En un entorno TCP/IP pueden haber múltiples aplicaciones y para diferenciarlas se ocupa la dirección denominada puerto.</p>
+              </div>
+              </div>
+            </div>
+    </div>
+
+    <div id="contenido9" class="tab-pane fade">
+    	<h3>Glosario</h3>
+    	<b>ARPANET</b> (<i>Advanced Research Projects Agency Network</i>): Red de conmutación de paquetes creada por el Departamento de Defensa de los Estados Unidos.<br><br>
+    	<b>DARPA</b> (<i>Defense Advanced Research Projects Agency</i>): Agencia de Proyectos de Investigación Avanzados de Defensa.<br><br>
+    	<b>ARP</b> (<i>Address Resolution Protocol</i>): Protocolo de resolución de direcciones.<br><br>
+    	<b>NDP</b> (<i>Neighbor Discovery Protocol</i>): Protocolo de descubrimiento de vecino.<br><br>
+    	<b>TCP</b> (<i>Transmission Control Protocol</i>): Protocolo de control de transmisión.<br><br>
+        <b>UDP</b> (<i>User Datagram Protocol</i>): Protocolo de datagrama de usuario.<br><br>
+    	<b>SMTP</b> (<i>Simple Mail Transfer Protocol</i>): Protocolo simple de transferencia de correo electrónico.<br><br>
+    	<b>FTP</b> (<i>File Transfer Protocol</i>): Protocolo de transferencia de archivos.<br><br>
+    	<b>TELNET</b> (<i>Telecommunication Network</i>): Protocolo de red de telecomunicación.<br><br>
+    	<b>SNMP</b> (<i>Simple Network Management Protocol</i>): Protocolo simple de gestión de red.<br><br>
+    	<b>ICMP</b> (<i>Internet Control Message Protocol</i>): Protocolo de mensajes de control de Internet.<br><br>
+    	<b>IGMP</b> (<i>Internet Group Management Protocol</i>): Protocolo de gestión de grupos en Internet.<br><br>
+    	<b>OSPF</b> (<i>Open Shortest Path First</i>): Protocolo del primer camino más corto disponible.<br><br>
+    	<b>RSVP</b> (<i>Resource Reservation Protocol</i>): Protocolo de reserva de recursos.<br><br>
+    	<b>Ethernet</b>: Familia de tecnologías de redes de comunicación usada comúnmente en redes de área local (LAN), redes de área metropolitana (MAN) y redes de área amplia (WAN).<br><br>
+        <b>FDDI</b> (<i>Fiber Distributed Data Interface</i>): Estándar para transmisión de datos en una red de área local (LAN) que hace uso de fibra óptica como su subyacente medio físico.<br><br>
+
+
+    </div>	
+
+    <div id="contenido10" class="tab-pane fade">
+      
+      <h2>Evaluación</h2>
+
+      <div>
+
+        <p id="texto_pregunta_1"></p></br>
+          <form id = "pregunta_1">
+            <input id="pregunta_1_alternativa_1" type="radio" name="gender" value="3"> <label id="texto_pregunta_1_alternativa_1"></label> </br>
+            <input id="pregunta_1_alternativa_2" type="radio" name="gender" value="1"> <label id="texto_pregunta_1_alternativa_2"></label> </br>
+            <input id="pregunta_1_alternativa_3" type="radio" name="gender" value="2"> <label id="texto_pregunta_1_alternativa_3"></label> </br>
+            <input id="pregunta_1_alternativa_4" type="radio" name="gender" value="1"> <label id="texto_pregunta_1_alternativa_4"></label> </br>
+            <input id="pregunta_1_alternativa_5" type="radio" name="gender" value="2"> <label id="texto_pregunta_1_alternativa_5"></label> </br>
+          </form>
+          <p id="resultado_1"></p>
+          <p id = "respuesta_1" class="oculto"></p></br>
+
+      </div>
+
+    <div>
+
+      <p id="texto_pregunta_2"></p></br>
+      <form id = "pregunta_2">
+        <input id="pregunta_2_alternativa_1" type="radio" name="gender" value="3"> <label id="texto_pregunta_2_alternativa_1"></label> </br>
+        <input id="pregunta_2_alternativa_2" type="radio" name="gender" value="1"> <label id="texto_pregunta_2_alternativa_2"></label> </br>
+      </form>
+      <p id="resultado_2"></p>
+      <p id = "respuesta_2" class="oculto"></p></br>
+
+    </div>
+    
+    <div>
+
+      <p id="texto_pregunta_3"></p></br>
+      <form id = "pregunta_3">
+        <input id="pregunta_3_alternativa_1" type="radio" name="gender" value="3"> <label id="texto_pregunta_3_alternativa_1"></label> </br>
+        <input id="pregunta_3_alternativa_2" type="radio" name="gender" value="1"> <label id="texto_pregunta_3_alternativa_2"></label> </br>
+        <input id="pregunta_3_alternativa_3" type="radio" name="gender" value="2"> <label id="texto_pregunta_3_alternativa_3"></label> </br>
+        <input id="pregunta_3_alternativa_4" type="radio" name="gender" value="1"> <label id="texto_pregunta_3_alternativa_4"></label> </br>
+        <input id="pregunta_3_alternativa_5" type="radio" name="gender" value="2"> <label id="texto_pregunta_3_alternativa_5"></label> </br>
+      </form>
+      <p id="resultado_3"></p>
+      <p id = "respuesta_3" class="oculto"></p></br>
+
+    </div>
+
+    <div>
+
+      <p id="texto_pregunta_4"></p></br>
+      <form id = "pregunta_4">
+        <input id="pregunta_4_alternativa_1" type="radio" name="gender" value="3"> <label id="texto_pregunta_4_alternativa_1"></label> </br>
+        <input id="pregunta_4_alternativa_2" type="radio" name="gender" value="1"> <label id="texto_pregunta_4_alternativa_2"></label> </br>
+        <input id="pregunta_4_alternativa_3" type="radio" name="gender" value="2"> <label id="texto_pregunta_4_alternativa_3"></label> </br>
+        <input id="pregunta_4_alternativa_4" type="radio" name="gender" value="1"> <label id="texto_pregunta_4_alternativa_4"></label> </br>
+        <input id="pregunta_4_alternativa_5" type="radio" name="gender" value="2"> <label id="texto_pregunta_4_alternativa_5"></label> </br>
+      </form>
+      <p id="resultado_4"></p>
+      <p id = "respuesta_4" class="oculto"></p></br>
+
+    </div>
+
+    <div>
+
+      <p id="texto_pregunta_5"></p></br>
+      <form id = "pregunta_5">
+        <input id="pregunta_5_alternativa_1" type="radio" name="gender" value="3"> <label id="texto_pregunta_5_alternativa_1"></label> </br>
+        <input id="pregunta_5_alternativa_2" type="radio" name="gender" value="1"> <label id="texto_pregunta_5_alternativa_2"></label> </br>
+        <input id="pregunta_5_alternativa_3" type="radio" name="gender" value="2"> <label id="texto_pregunta_5_alternativa_3"></label> </br>
+        <input id="pregunta_5_alternativa_4" type="radio" name="gender" value="1"> <label id="texto_pregunta_5_alternativa_4"></label> </br>
+        <input id="pregunta_5_alternativa_5" type="radio" name="gender" value="2"> <label id="texto_pregunta_5_alternativa_5"></label> </br>
+      </form>
+      <p id="resultado_5"></p>
+      <p id = "respuesta_5" class="oculto"></p></br>
+
+    </div>
+
+    <div>
+
+      <p id="texto_pregunta_6"></p></br>
+      <form id = "pregunta_6">
+        <input id="pregunta_6_alternativa_1" type="radio" name="gender" value="3"> <label id="texto_pregunta_6_alternativa_1"></label> </br>
+        <input id="pregunta_6_alternativa_2" type="radio" name="gender" value="1"> <label id="texto_pregunta_6_alternativa_2"></label> </br>
+        <input id="pregunta_6_alternativa_3" type="radio" name="gender" value="2"> <label id="texto_pregunta_6_alternativa_3"></label> </br>
+        <input id="pregunta_6_alternativa_4" type="radio" name="gender" value="1"> <label id="texto_pregunta_6_alternativa_4"></label> </br>
+        <input id="pregunta_6_alternativa_5" type="radio" name="gender" value="2"> <label id="texto_pregunta_6_alternativa_5"></label> </br>
+      </form>
+      <p id="resultado_6"></p>
+      <p id = "respuesta_6" class="oculto"></p></br>
+
+    </div>
+
+    <div>
+
+      <p id="texto_pregunta_7"></p></br>
+      <form id = "pregunta_7">
+        <input id="pregunta_7_alternativa_1" type="radio" name="gender" value="3"> <label id="texto_pregunta_7_alternativa_1"></label> </br>
+        <input id="pregunta_7_alternativa_2" type="radio" name="gender" value="1"> <label id="texto_pregunta_7_alternativa_2"></label> </br>
+      </form>
+      <p id="resultado_7"></p>
+      <p id = "respuesta_7" class="oculto"></p></br>
+
+    </div>      
+
+      <a id = "CorregirTodo" class = "btn btn-default" onclick = "correccionValida(7)"> 
+        Corregir 
+      </a>
+
+      <script>
+
+
+
+                  //pregunta 1
+                  var textoPregunta1 = "1) FTP y SMTP corresponden a protocolos de la capa:";
+                  var alternativasPregunta1 = ["a) De acceso a la red.","b) Internet.","c) De transporte.","d) De aplicación.","e) Ninguna de las anteriores."];
+                  var respuesta1 = "d) De aplicación.";
+                  generarPregunta(1,textoPregunta1,alternativasPregunta1,respuesta1);
+
+                  //pregunta 2
+                  var textoPregunta2 = "2) La capa de acceso a la red se puede preocupar del manejo de prioridades:";
+                  var alternativasPregunta2 = ["a) Verdadero.","b) Falso."];
+                  var respuesta2 = "a) Verdadero.";
+                  generarPregunta(2,textoPregunta2,alternativasPregunta2,respuesta2);
+
+                  //pregunta 3
+                  var textoPregunta3 = "3) Protocolo de la capa de transporte que es orientado a conexión:";
+                  var alternativasPregunta3 = ["a) UDP.","b) IPv6.","c) NDP.","d) TCP.","e) FTP."];
+                  var respuesta3 = "d) TCP.";
+                  generarPregunta(3,textoPregunta3,alternativasPregunta3,respuesta3);
+
+                  //pregunta 4
+                  var textoPregunta4 = "4) Los datagramas corresponden a las PDU de:";
+                  var alternativasPregunta4 = ["a) Transporte.","b) Internet.","c) Red.","d) Enlace.","e) Ninguna de las anteriores."];
+                  var respuesta4 = "b) Internet.";
+                  generarPregunta(4,textoPregunta4,alternativasPregunta4,respuesta4);
+
+                  //pregunta 5
+                  var textoPregunta5 = "5) El módulo IP de un router se encarga de:";
+                  var alternativasPregunta5 = ["a) Crear el enlace entre el mismo y la subred destino.","b) Posicionar los bloques en la subred destino según una dirección.","c) Asegurar la llegada de los datos y la conservación del orden.","d) Establecer una conexión con el módulo IP del emisor.","e) a y d."];
+                  var respuesta5 = "b) Posicionar los bloques en la subred destino según una dirección.";
+                  generarPregunta(5,textoPregunta5,alternativasPregunta5,respuesta5);
+
+                  //pregunta 6
+                  var textoPregunta6 = "6) La cabecera de IPv6 tiene un campo de direcciones de:";
+                  var alternativasPregunta6 = ["a) 256 bits.","b) 32 bits.","c) 128 bits.","d) 16 bits.","e) Ninguna de las anteriores."];
+                  var respuesta6 = "c) 128 bits.";
+                  generarPregunta(6,textoPregunta6,alternativasPregunta6,respuesta6);
+
+                  //pregunta 7
+                  var textoPregunta7 = "7) La capa de aplicación necesita un módulo separado para cada tipo de aplicación:";
+                  var alternativasPregunta7 = ["a) Verdadero.","b) Falso."];
+                  var respuesta7 = "a) Verdadero.";
+                  generarPregunta(7,textoPregunta7,alternativasPregunta7,respuesta7);
+
+
+
+
+      </script>
+
+
+    </div>
+      
+	 </div>
+   </div>    
+    </div>
+    <!--<div class="col-sm-2 sidenav">
+      <div class="well">
+        <p>ADS</p>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div>
+    </div>-->
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <p>Arquitecturas de protocolos</p>
+</footer>
+
+</body>
+</html>

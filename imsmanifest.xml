@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This is a Reload version 2.5.6 SCORM 1.2 Content Package document-->
+<!--Spawned from the Reload Content Package Generator - http://www.reload.ac.uk-->
+<manifest xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:imsmd="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" identifier="MANIFEST-5FCF39E6FB8361FF0D660CAFC20DA66D" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <metadata>
+    <imsmd:lom>
+      <imsmd:general>
+        <imsmd:identifier>OA_ArquitecturasDeProtocolos</imsmd:identifier>
+        <imsmd:title>
+          <imsmd:langstring xml:lang="en">Arquitecturas de protocolos</imsmd:langstring>
+        </imsmd:title>
+        <imsmd:language>es</imsmd:language>
+        <imsmd:description>
+          <imsmd:langstring xml:lang="en">Objetos de Aprendizaje para el apoyo en el estudio de las arquitecturas de protocolos. Cubre los conceptos básicos y fundamentales de las arquitecturas, el modelo de referencia OSI y el conjunto de protocolos TCP/IP.</imsmd:langstring>
+        </imsmd:description>
+        <imsmd:keyword>
+          <imsmd:langstring xml:lang="en">Arquitecturas de protocolos, OSI, TCP/IP, Redes</imsmd:langstring>
+        </imsmd:keyword>
+        <imsmd:coverage>
+          <imsmd:langstring xml:lang="en">Redes computacionales</imsmd:langstring>
+        </imsmd:coverage>
+        <imsmd:structure>
+          <imsmd:source>
+            <imsmd:langstring xml:lang="en">LOMv1.0</imsmd:langstring>
+          </imsmd:source>
+          <imsmd:value>
+            <imsmd:langstring xml:lang="en">Mixed</imsmd:langstring>
+          </imsmd:value>
+        </imsmd:structure>
+        <imsmd:aggregationlevel>
+          <imsmd:source>
+            <imsmd:langstring xml:lang="en">LOMv1.0</imsmd:langstring>
+          </imsmd:source>
+          <imsmd:value>
+            <imsmd:langstring xml:lang="en">3</imsmd:langstring>
+          </imsmd:value>
+        </imsmd:aggregationlevel>
+      </imsmd:general>
+      <imsmd:lifecycle>
+        <imsmd:version>
+          <imsmd:langstring xml:lang="en">1.0</imsmd:langstring>
+        </imsmd:version>
+        <imsmd:status>
+          <imsmd:source>
+            <imsmd:langstring xml:lang="en">LOMv1.0</imsmd:langstring>
+          </imsmd:source>
+          <imsmd:value>
+            <imsmd:langstring xml:lang="en">Revised</imsmd:langstring>
+          </imsmd:value>
+        </imsmd:status>
+        <imsmd:contribute>
+          <imsmd:role>
+            <imsmd:source>
+              <imsmd:langstring xml:lang="en">LOMv1.0</imsmd:langstring>
+            </imsmd:source>
+            <imsmd:value>
+              <imsmd:langstring xml:lang="en">Author Edgar Gatica</imsmd:langstring>
+            </imsmd:value>
+          </imsmd:role>
+          <imsmd:centity>
+            <imsmd:vcard>Dra. Rosa Muñoz, Universidad de Santiago de Chile</imsmd:vcard>
+          </imsmd:centity>
+          <imsmd:date>
+            <imsmd:datetime>05/12/2017</imsmd:datetime>
+          </imsmd:date>
+        </imsmd:contribute>
+      </imsmd:lifecycle>
+      <imsmd:educational>
+        <imsmd:interactivitytype>
+          <imsmd:source>
+            <imsmd:langstring xml:lang="en">LOMv1.0</imsmd:langstring>
+          </imsmd:source>
+          <imsmd:value>
+            <imsmd:langstring xml:lang="en">Mixed</imsmd:langstring>
+          </imsmd:value>
+        </imsmd:interactivitytype>
+        <imsmd:learningresourcetype>
+          <imsmd:source>
+            <imsmd:langstring xml:lang="en">LOMv1.0</imsmd:langstring>
+          </imsmd:source>
+          <imsmd:value>
+            <imsmd:langstring xml:lang="en">Exercise</imsmd:langstring>
+          </imsmd:value>
+        </imsmd:learningresourcetype>
+        <imsmd:interactivitylevel>
+          <imsmd:source>
+            <imsmd:langstring xml:lang="en">LOMv1.0</imsmd:langstring>
+          </imsmd:source>
+          <imsmd:value>
+            <imsmd:langstring xml:lang="en">medium</imsmd:langstring>
+          </imsmd:value>
+        </imsmd:interactivitylevel>
+        <imsmd:semanticdensity>
+          <imsmd:source>
+            <imsmd:langstring xml:lang="en">LOMv1.0</imsmd:langstring>
+          </imsmd:source>
+          <imsmd:value>
+            <imsmd:langstring xml:lang="en">low</imsmd:langstring>
+          </imsmd:value>
+        </imsmd:semanticdensity>
+        <imsmd:intendedenduserrole>
+          <imsmd:source>
+            <imsmd:langstring xml:lang="en">LOMv1.0</imsmd:langstring>
+          </imsmd:source>
+          <imsmd:value>
+            <imsmd:langstring xml:lang="en">Learner</imsmd:langstring>
+          </imsmd:value>
+        </imsmd:intendedenduserrole>
+        <imsmd:context>
+          <imsmd:source>
+            <imsmd:langstring xml:lang="en">LOMv1.0</imsmd:langstring>
+          </imsmd:source>
+          <imsmd:value>
+            <imsmd:langstring xml:lang="en">Professional Formation</imsmd:langstring>
+          </imsmd:value>
+        </imsmd:context>
+        <imsmd:typicalagerange>
+          <imsmd:langstring xml:lang="en">18-26</imsmd:langstring>
+        </imsmd:typicalagerange>
+        <imsmd:difficulty>
+          <imsmd:source>
+            <imsmd:langstring xml:lang="en">LOMv1.0</imsmd:langstring>
+          </imsmd:source>
+          <imsmd:value>
+            <imsmd:langstring xml:lang="en">medium</imsmd:langstring>
+          </imsmd:value>
+        </imsmd:difficulty>
+        <imsmd:typicallearningtime>
+          <imsmd:datetime>15 min. por OA</imsmd:datetime>
+        </imsmd:typicallearningtime>
+        <imsmd:description>
+          <imsmd:langstring xml:lang="en">Aprendizaje de conceptos fundamentales de arquitecturas de protocolos mediante descripciones, imágenes en secuencia y evaluaciones.</imsmd:langstring>
+        </imsmd:description>
+        <imsmd:language>es</imsmd:language>
+      </imsmd:educational>
+      <imsmd:rights>
+        <imsmd:cost>
+          <imsmd:source>
+            <imsmd:langstring xml:lang="en">LOMv1.0</imsmd:langstring>
+          </imsmd:source>
+          <imsmd:value>
+            <imsmd:langstring xml:lang="en">no</imsmd:langstring>
+          </imsmd:value>
+        </imsmd:cost>
+        <imsmd:copyrightandotherrestrictions>
+          <imsmd:source>
+            <imsmd:langstring xml:lang="en">LOMv1.0</imsmd:langstring>
+          </imsmd:source>
+          <imsmd:value>
+            <imsmd:langstring xml:lang="en">no</imsmd:langstring>
+          </imsmd:value>
+        </imsmd:copyrightandotherrestrictions>
+        <imsmd:description>
+          <imsmd:langstring xml:lang="en">Recurso no sujeto a derechos de autor</imsmd:langstring>
+        </imsmd:description>
+      </imsmd:rights>
+    </imsmd:lom>
+  </metadata>
+  <organizations default="ORG-CE45226283235581316B79CC4246526C">
+    <organization identifier="ORG-CE45226283235581316B79CC4246526C" structure="hierarchical">
+      <title>Organization</title>
+      <item identifier="ITEM-1A88E611D8DE2DCBCA0E87894A842E7E" isvisible="true" identifierref="RES-A1D10106E8723E35AF67524ABD0257A2">
+        <title>Arquitecturas de protocolos</title>
+      </item>
+      <item identifier="ITEM-23A4D8E88616A49A3CFC85906360D77A" isvisible="true" identifierref="RES-51F5FA21CC0B91E0D1DF5F30972ACDF6">
+        <title>Modelo de referencia OSI</title>
+      </item>
+      <item identifier="ITEM-F6293F997F5DF66CB5C1AADFEFA14AC8" isvisible="true" identifierref="RES-55DA8FA0E82C46A625A8E178CA7F8542">
+        <title>Conjunto de protocolos TCP/IP</title>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="RES-A1D10106E8723E35AF67524ABD0257A2" type="webcontent" href="oa1.html">
+      <file href="oa1.html" />
+      <file href="bootstrap/css/bootstrap.min.css" />
+    </resource>
+    <resource identifier="RES-51F5FA21CC0B91E0D1DF5F30972ACDF6" type="webcontent" href="oa2.html">
+      <file href="oa2.html" />
+      <file href="bootstrap/css/bootstrap.min.css" />
+    </resource>
+    <resource identifier="RES-55DA8FA0E82C46A625A8E178CA7F8542" type="webcontent" href="oa3.html">
+      <file href="oa3.html" />
+      <file href="bootstrap/css/bootstrap.min.css" />
+    </resource>
+    <resource identifier="RES-9CC440B8029433A3296886E02B8B01FC" type="webcontent" href="js.css/estilo.css">
+      <file href="js.css/estilo.css" />
+    </resource>
+  </resources>
+</manifest>
+

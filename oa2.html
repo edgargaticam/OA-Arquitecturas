@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Arquitecturas de protocolos</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="js.css/estilo.css">
+  <script type="text/javascript" src="jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js.css/javascript.js"></script>
+</head>
+<body onload="CalcularAltura()" onResize="CalcularAltura()">
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">OSI y TCP/IP</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="oa1.html">Arquitecturas</a></li>
+        <li class="active"><a href="#">Modelo OSI</a></li>
+        <li><a href="oa3.html">TCP/IP</a></li>
+      </ul>
+      <!--<ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>-->
+    </div>
+  </div>
+</nav>
+  
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2">
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a id="1" data-toggle="pill" href="#contenido1">Introducción</a></li>
+        <li><a id="2" data-toggle="pill" href="#contenido2">OSI</a></li>
+        <li><a id="3" data-toggle="pill" href="#contenido3">Entorno OSI</a></li>
+        <li><a id="4" data-toggle="pill" href="#contenido4">Capa física</a></li>
+        <li><a id="5" data-toggle="pill" href="#contenido5">Capa de enlace de datos</a></li>
+        <li><a id="6" data-toggle="pill" href="#contenido6">Capa de red</a></li>
+        <li><a id="7" data-toggle="pill" href="#contenido7">Capa de transporte</a></li>
+        <li><a id="8" data-toggle="pill" href="#contenido8">Capa de sesión</a></li>
+        <li><a id="9" data-toggle="pill" href="#contenido9">Capa de presentación</a></li>
+        <li><a id="10" data-toggle="pill" href="#contenido10">Capa de aplicación</a></li>
+        <li><a id="11" data-toggle="pill" href="#contenido11">Evaluación</a></li>
+      </ul>
+    </div>
+  <div class="col-sm-10 text-left">
+    <h3 class="text-center titulo" id="titulosPanel"><b>Modelo de referencia OSI</b></h3>
+
+          <p align=right>
+          <button id="Atras" type="button" class="btn btn-primary" onclick="pantallaAnterior()">Atrás</button>
+          <button id="Siguiente" type="button" class="btn btn-primary" onclick="pantallaSiguiente()">Siguiente</button>
+          </p>
+    <div class="marco" id="zonaContenido">
+     <div class="tab-content">
+      <div id="contenido1" class="tab-pane fade in active">
+          <p class="text-justify">En el material expuesto a continuación se explicará el modelo de referencia OSI.<br><br>
+
+          Los temas tratados serán:
+
+          <ul>
+          <li>Introducción a OSI</li>
+          <li>Funcionamiento del entorno OSI</li>
+          <li>Descripción de las capas</li>
+          <li>Protocolos usados</li>
+          </ul>
+
+          A la izquierda se encuentra un índice para navegar entre las secciones y a su vez botones para avanzar y retroceder entre ellas en la parte superior derecha.<br><br>
+
+          En algunas secciones se encuentran secuencias explicativas donde se debe avanzar (o retroceder) utilizando los botones correspondientes. Tambien es posible encontrarse con siglas o palabras con links que dirigen a un glosario con sus definiciones. Al abandonar una sección para dirigirse a otra, no se pierde el avance en las secuencias.<br><br>
+
+          En la barra de la parte superior de la pantalla es posible dirigirse a los otros materiales disponibles haciendo click en la opción deseada.
+          </p>
+
+
+      </div>
+
+
+      <div id="contenido2" class="tab-pane fade">  
+	      <h1>OSI</h1>
+	      <p class="text-justify">Al momento de establecer una comunicación entre computadores de distintos fabricantes, resulta compleja y costosa la implementación de software específico debido a los distintos formatos de intercambio de datos. La forma de superar esto es que los fabricantes adopten un conjunto de convenciones comunes.
+        <br><br>
+		  Existen dos arquitecturas primordiales en el desarrollo de estándares de comunicación: el conjunto de protocolos <b>TCP/IP</b> y el modelo de referencia <b>OSI</b>.
+		  En 1977 la ISO (<i>International Organization for Standardization</i>) estableció un subcomité para el desarrollo de una arquitectura de comunicaciones que constituyera el marco de trabajo para el proceso de normalización. El resultado fue el <b>modelo de referencia OSI</b>.<br><br>
+		  El fin de la creación del modelo OSI fue definir un conjunto de capas y los servicios que realizan. La división en capas debería agrupar a funciones que conceptualmente estén próximas en un número que fuera suficiente, para que la capa sea lo más pequeña posible, pero al mismo tiempo evitando la creación de demasiadas capas para no sobrecargar el procesamiento.
+          </p>
+	      <hr>
+	      
+	  </div>
+	  <div id="contenido3" class="tab-pane fade">
+	    <h3>Entorno OSI</h3>
+	    <p>Como resultado de lo anterior, se creó una arquitectura de 7 capas. A continuación se describe la comunicación en un entorno OSI.
+        </p><br><br>
+
+          <img class="img-responsive center-block" src="img/nombre_carpeta4/entorno1.PNG" id="nombre_carpeta4">
+
+            <div class="row"> 
+             
+              <div class="col-sm-6">
+                <img class= "pull-right" src="img/otras_img/ldisabled.png" id="nombre_carpeta4_btn_ant" onclick="imagen_familia('nombre_carpeta4', 'texto4', 0)">
+              </div>
+            
+              <!--<div class="col-sm-3">
+                <button class="btn btn-default" onclick="play_familia('nombre_carpeta4')">play</button>
+              </div>-->
+
+              <div class="col-sm-6">
+                <img class= "clickable pull-left" src="img/otras_img/right.png" id="nombre_carpeta4_btn_sig" onclick="imagen_familia('nombre_carpeta4', 'texto4', 1)">
+              </div>
+
+            </div>
+
+              <br>
+              <div class="well well-sm">
+                <p class="text-center" id="texto4">En un entorno OSI cada sistema debe contener las 7 capas. Si la aplicación A quiere transmitir un mensaje a la aplicación B, invoca a la capa de aplicación (capa 7).</p>
+              </div>     
+
+	  </div>
+	  <div id="contenido4" class="tab-pane fade">
+	    <h3>Capa física</h3>
+	    <p>Esta capa se carga de la interfaz física entre los dispositivos que se comunican, definiendo las reglas que rigen la transmisión de bits. Las características más importantes de esta capa son:
+      <br><br>
+		<b>Mecánicas</b>: se relacionan con las propiedades físicas de la interfaz con el medio transmisor, incluyéndose la especificación de los circuitos.
+    <br><br>
+		<b>Eléctricas</b>: especificación de cómo se representan los bits (en niveles de tensión), así como su velocidad de transmisión.
+    <br><br>
+		<b>Funcionales</b>: especificación de las funciones de cada circuito de la interfaz física entre el sistema y el medio de transmisión.
+    <br><br>
+		<b>De procedimiento</b>: especificación de la secuencia de eventos en que se realiza el intercambio del flujo de bits a través del medio físico.
+        </p>
+        <hr>
+	  </div>
+	  <div id="contenido5" class="tab-pane fade">
+	    <h3>Capa de enlace de datos</h3>
+	    <p class="text-justify">Esta capa está encargada de asegurar que el enlace físico sea fiable, proporcionando además los medios para activar, mantener y desactivar el enlace. El servicio principal que esta capa provee a las capas superiores es el de detección y control de errores, de esta manera al tener un nivel de enlace de datos completamente operativo, las capas superiores pueden asumir que la transmisión está libre de errores. <b>HDLC</b> y <b>LLC</b> son algunos de los protocolos utilizados en esta capa.
+        </p>
+        <hr>
+	  </div>
+    <div id="contenido6" class="tab-pane fade">
+      <h3>Capa de red</h3>
+      <div class="row">	
+	<div class="col-sm-5">
+      <p class="text-justify">
+      Esta capa está a cargo de la transferencia de información entre sistemas finales a través del uso de algún tipo de red de comunicación. La capa de red hará que el computador establezca un diálogo con la red para especificar el computador destino y la solicitud de otros servicios, como la gestión de prioridades. Esta capa libera a las demás del conocimiento sobre las tecnologías de conmutación que se utilizan para conectar los sistemas.<br><br>
+	  Un enlace punto-a-punto directo entre sistemas finales no hace uso de la capa de red, ya que la capa de enlace de datos puede proporcionar las funciones de gestión de enlace necesarias. Entre las distintas topologías que pueden ser gestionadas por la capa de red, la más sencilla sería la de un sistema conectado a través de una única red (red de conmutación de paquetes), como se describe en el siguiente esquema:
+      </p>
+      <hr>
+    </div>
+    	<div class="col-sm-7">
+                <img class="img-responsive center-block" src="img/nombre_carpeta5/red1.PNG" id="nombre_carpeta5">
+
+            <div class="row"> 
+             
+              <div class="col-sm-6">
+                <img class= "pull-right" src="img/otras_img/ldisabled.png" id="nombre_carpeta5_btn_ant" onclick="imagen_familia('nombre_carpeta5', 'texto5', 0)">
+              </div>
+            
+              <!--<div class="col-sm-3">
+                <button class="btn btn-default" onclick="play_familia('nombre_carpeta5')">play</button>
+              </div>-->
+
+              <div class="col-sm-6">
+                <img class= "clickable pull-left" src="img/otras_img/right.png" id="nombre_carpeta5_btn_sig" onclick="imagen_familia('nombre_carpeta5', 'texto5', 1)">
+              </div>
+
+            </div>
+
+
+              <br>
+              <div class="well">
+                <p class="text-center" id="texto5">Las tres capas inferiores están relacionadas con la conexión y la comunicación con la red.</p>
+              </div>
+         </div>
+     </div>
+     <hr>         
+
+    </div>
+    <div id="contenido7" class="tab-pane fade">
+      <h3>Capa de transporte</h3>
+      <p>
+      Esta capa proporciona un mecanismo para el transporte de datos entre sistemas finales (no es utilizada en nodos intermedios). El servicio de transporte orientado a conexión asegura que los datos se entregan libres de errores, en orden y sin pérdidas ni duplicaciones. Se puede involucrar en la optimización del uso de los servicios y de red y en proporcionar la calidad del servicio solicitada.<br><br>
+      ISO ha desarrollado una familia de protocolos de transporte normalizados, cada uno para un determinado servicio subyacente. Uno de estos protocolos es <b>ISO-TP</b> (<i>Transport Layer</i>).<br><br>
+      Esta capa libera a las entidades de las capas superiores de cualquier preocupación sobre el transporte de datos entre ellas.
+      </p>
+      <hr>
+    </div>
+    <div id="contenido8" class="tab-pane fade">
+      <h3>Capa de sesión</h3>
+      <p class="text-justify">
+      La capa de sesión proporciona los mecanismos para controlar el diálogo entre las aplicaciones de los sistemas finales.<br><br>
+	  Las cuatro capas descritas anteriormente proporcionan un medio para el intercambio fiable datos (permitiendo distintos niveles de calidad de servicio). Esto no resulta suficiente para muchas aplicaciones que necesitan mecanismos para organizar, sincronizar diálogo y controlar el intercambio de datos. Estas capacidades podrían implementarse en la capa 7 de aplicación, pero ya que son vastamente requeridas, es lógico implementarlas en una capa separada. Los servicios proporcionados por esta capas son:<br><br>
+	  <b>Control de diálogo</b>: el que puede ser simultáneo en los dos sentidos (full-dúplex) o alternado en ambos sentidos (half-dúplex).<br><br>
+	  <b>Agrupamiento</b>: el flujo de datos se puede marcar para definir grupos de datos.<br><br>
+	  <b>Recuperación</b>: proporcionar un procedimiento de puntos de comprobación, de forma que se puedan retransmitir todos los datos desde el último punto de comprobación si hay algún fallo entre los puntos.
+
+      </p>
+      <hr>
+    </div>
+    <div id="contenido9" class="tab-pane fade">
+      <h3>Capa de presentación</h3>
+      <p>
+      Esta capa define el formato de los datos que se intercambian entre aplicaciones y ofrece un servicio conversión de datos. Define sintaxis entre las entidades y proporciona medios para seleccionar y modificar la representación utilizada. Algunos servicios específicos son la compresión y cifrado de datos.
+
+      </p>
+      <hr>
+    </div>
+    <div id="contenido10" class="tab-pane fade">
+      <h3>Capa de aplicación</h3>
+      <p>
+      Esta capa es la conexión entre las aplicaciones del computador y el entorno OSI. Acá pertenecen las funciones de administración y mecanismos para la implementación de aplicaciones distribuidas, además de residir las aplicaciones de uso general como la transferencia de archivos, el correo electrónico, etc.
+
+      </p>
+      <hr>
+    </div>
+    <div id="contenido11" class="tab-pane fade">
+      
+      <h2>Evaluación</h2>
+
+      <div>
+
+				<p id="texto_pregunta_1"></p></br>
+					<form id = "pregunta_1">
+						<input id="pregunta_1_alternativa_1" type="radio" name="gender" value="3"> <label id="texto_pregunta_1_alternativa_1"></label> </br>
+						<input id="pregunta_1_alternativa_2" type="radio" name="gender" value="1"> <label id="texto_pregunta_1_alternativa_2"></label> </br>
+					</form>
+					<p id="resultado_1"></p>
+					<p id = "respuesta_1" class="oculto"></p></br>
+
+		  </div>
+
+		<div>
+
+			<p id="texto_pregunta_2"></p></br>
+			<form id = "pregunta_2">
+				<input id="pregunta_2_alternativa_1" type="radio" name="gender" value="3"> <label id="texto_pregunta_2_alternativa_1"></label> </br>
+				<input id="pregunta_2_alternativa_2" type="radio" name="gender" value="1"> <label id="texto_pregunta_2_alternativa_2"></label> </br>
+			</form>
+			<p id="resultado_2"></p>
+			<p id = "respuesta_2" class="oculto"></p></br>
+
+		</div>
+		
+		<div>
+
+			<p id="texto_pregunta_3"></p></br>
+			<form id = "pregunta_3">
+				<input id="pregunta_3_alternativa_1" type="radio" name="gender" value="3"> <label id="texto_pregunta_3_alternativa_1"></label> </br>
+				<input id="pregunta_3_alternativa_2" type="radio" name="gender" value="1"> <label id="texto_pregunta_3_alternativa_2"></label> </br>
+				<input id="pregunta_3_alternativa_3" type="radio" name="gender" value="2"> <label id="texto_pregunta_3_alternativa_3"></label> </br>
+				<input id="pregunta_3_alternativa_4" type="radio" name="gender" value="1"> <label id="texto_pregunta_3_alternativa_4"></label> </br>
+				<input id="pregunta_3_alternativa_5" type="radio" name="gender" value="2"> <label id="texto_pregunta_3_alternativa_5"></label> </br>
+			</form>
+			<p id="resultado_3"></p>
+			<p id = "respuesta_3" class="oculto"></p></br>
+
+		</div>
+
+		<div>
+
+			<p id="texto_pregunta_4"></p></br>
+			<form id = "pregunta_4">
+				<input id="pregunta_4_alternativa_1" type="radio" name="gender" value="3"> <label id="texto_pregunta_4_alternativa_1"></label> </br>
+				<input id="pregunta_4_alternativa_2" type="radio" name="gender" value="1"> <label id="texto_pregunta_4_alternativa_2"></label> </br>
+				<input id="pregunta_4_alternativa_3" type="radio" name="gender" value="2"> <label id="texto_pregunta_4_alternativa_3"></label> </br>
+				<input id="pregunta_4_alternativa_4" type="radio" name="gender" value="1"> <label id="texto_pregunta_4_alternativa_4"></label> </br>
+				<input id="pregunta_4_alternativa_5" type="radio" name="gender" value="2"> <label id="texto_pregunta_4_alternativa_5"></label> </br>
+			</form>
+			<p id="resultado_4"></p>
+			<p id = "respuesta_4" class="oculto"></p></br>
+
+		</div>
+
+		<div>
+
+			<p id="texto_pregunta_5"></p></br>
+			<form id = "pregunta_5">
+				<input id="pregunta_5_alternativa_1" type="radio" name="gender" value="3"> <label id="texto_pregunta_5_alternativa_1"></label> </br>
+				<input id="pregunta_5_alternativa_2" type="radio" name="gender" value="1"> <label id="texto_pregunta_5_alternativa_2"></label> </br>
+				<input id="pregunta_5_alternativa_3" type="radio" name="gender" value="2"> <label id="texto_pregunta_5_alternativa_3"></label> </br>
+				<input id="pregunta_5_alternativa_4" type="radio" name="gender" value="1"> <label id="texto_pregunta_5_alternativa_4"></label> </br>
+				<input id="pregunta_5_alternativa_5" type="radio" name="gender" value="2"> <label id="texto_pregunta_5_alternativa_5"></label> </br>
+			</form>
+			<p id="resultado_5"></p>
+			<p id = "respuesta_5" class="oculto"></p></br>
+
+		</div>
+
+    <div>
+
+      <p id="texto_pregunta_6"></p></br>
+      <form id = "pregunta_6">
+        <input id="pregunta_6_alternativa_1" type="radio" name="gender" value="3"> <label id="texto_pregunta_6_alternativa_1"></label> </br>
+        <input id="pregunta_6_alternativa_2" type="radio" name="gender" value="1"> <label id="texto_pregunta_6_alternativa_2"></label> </br>
+        <input id="pregunta_6_alternativa_3" type="radio" name="gender" value="2"> <label id="texto_pregunta_6_alternativa_3"></label> </br>
+        <input id="pregunta_6_alternativa_4" type="radio" name="gender" value="1"> <label id="texto_pregunta_6_alternativa_4"></label> </br>
+        <input id="pregunta_6_alternativa_5" type="radio" name="gender" value="2"> <label id="texto_pregunta_6_alternativa_5"></label> </br>
+      </form>
+      <p id="resultado_6"></p>
+      <p id = "respuesta_6" class="oculto"></p></br>
+
+    </div>
+
+    <div>
+
+      <p id="texto_pregunta_7"></p></br>
+      <form id = "pregunta_7">
+        <input id="pregunta_7_alternativa_1" type="radio" name="gender" value="3"> <label id="texto_pregunta_7_alternativa_1"></label> </br>
+        <input id="pregunta_7_alternativa_2" type="radio" name="gender" value="1"> <label id="texto_pregunta_7_alternativa_2"></label> </br>
+      </form>
+      <p id="resultado_7"></p>
+      <p id = "respuesta_7" class="oculto"></p></br>
+
+    </div>   		  
+
+		  <a id = "CorregirTodo" class = "btn btn-default" onclick = "correccionValida(7)"> 
+				Corregir 
+		  </a>
+
+		  <script>
+
+
+
+									//pregunta 1
+									var textoPregunta1 = "1) Con el modelo de referencia OSI se establece que se deben tener la mayor cantidad de capas posible para así dividir el trabajo en tareas más fáciles:";
+									var alternativasPregunta1 = ["a) Verdadero.","b) Falso."];
+									var respuesta1 = "b) Falso.";
+									generarPregunta(1,textoPregunta1,alternativasPregunta1,respuesta1);
+
+									//pregunta 2
+									var textoPregunta2 = "2) En la única capa donde existe comunicación directa entre los sistemas es en la capa de enlace de datos:";
+									var alternativasPregunta2 = ["a) Verdadero.","b) Falso."];
+									var respuesta2 = "b) Falso.";
+									generarPregunta(2,textoPregunta2,alternativasPregunta2,respuesta2);
+
+									//pregunta 3
+									var textoPregunta3 = "3) Los nodos intermedios que actúan como retransmisores implementan solo las capas:";
+									var alternativasPregunta3 = ["a) De transporte, física y de enlace de datos.","b) Física y de red.","c) De aplicación, transporte y de red.","d) De aplicación, de enlace y de red.","e) Física, de enlace de datos y de red."];
+									var respuesta3 = "e) Física, de enlace de datos y de red.";
+									generarPregunta(3,textoPregunta3,alternativasPregunta3,respuesta3);
+
+									//pregunta 4
+									var textoPregunta4 = "4) La capa que se ocupa del manejo de la sintaxis entre entidades es:";
+									var alternativasPregunta4 = ["a) La capa de presentación.","b) La capa de sesión.","c) La capa de aplicación.","d) La capa de enlace de datos.","e) La capa física."];
+									var respuesta4 = "a) La capa de presentación.";
+									generarPregunta(4,textoPregunta4,alternativasPregunta4,respuesta4);
+
+									//pregunta 5
+									var textoPregunta5 = "5) La capa que es un protocolo extremo-a-extremo entre los sistemas finales es:";
+									var alternativasPregunta5 = ["a) La capa de sesión.","b) La capa de transporte.","c) La capa de aplicación.","d)La capa de presentación.","e) Todas las anteriores."];
+									var respuesta5 = "e) Todas las anteriores.";
+									generarPregunta(5,textoPregunta5,alternativasPregunta5,respuesta5);
+
+                  //pregunta 6
+                  var textoPregunta6 = "6) Corresponde a un protocolo de la capa de transporte de OSI:";
+                  var alternativasPregunta6 = ["a) HDLC.","b) ISO.","c) LLC.","d) ISO-TP.","e) Ninguna de las anteriores."];
+                  var respuesta6 = "d) ISO-TP.";
+                  generarPregunta(6,textoPregunta6,alternativasPregunta6,respuesta6);
+
+                  //pregunta 7
+                  var textoPregunta7 = "7) La capa de aplicación requiere los servicios de la capa de presentación:";
+                  var alternativasPregunta7 = ["a) Verdadero.","b) Falso."];
+                  var respuesta7 = "a) Verdadero.";
+                  generarPregunta(7,textoPregunta7,alternativasPregunta7,respuesta7);
+
+
+		  </script>
+
+      
+
+
+
+
+    </div>       
+	 </div>
+   </div>     
+    </div>
+    <!--<div class="col-sm-2 sidenav">
+      <div class="well">
+        <p>ADS</p>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div>
+    </div>-->
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <p>Arquitecturas de protocolos</p>
+</footer>
+
+</body>
+</html>
